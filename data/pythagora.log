@@ -1,0 +1,78 @@
+2026-08-01T11:21:47.594Z INFO Is remote: false
+2026-08-01T11:21:47.603Z INFO Starting Local. Installation path: undefined
+2026-08-01T11:21:47.605Z INFO [MainProvider] Creating new MainProvider instance...
+2026-08-01T11:21:47.608Z INFO [TabsManager] Code view listener set up at initialization
+2026-08-01T11:21:47.610Z INFO Installation path exists: c:\Users\koris\OneDrive\Desktop\salon_project\salon_project
+2026-08-01T11:21:47.612Z INFO Initializing database with URL: file:C:\Users\koris\AppData\Local\Temp\pythagora-temp\pythagora.db
+2026-08-01T11:21:47.618Z INFO Database file exists, skipping prisma generate/push for faster startup
+2026-08-01T11:21:47.620Z INFO Database initialized successfully
+2026-08-01T11:21:47.622Z INFO [Migration] Checking for database migration...
+2026-08-01T11:21:47.796Z INFO [Migration] No migration needed
+2026-08-01T11:28:24.178Z INFO Closing entire Pythagora extension...
+2026-08-01T11:28:24.182Z ERROR Error closing extension
+Error: Canceled
+Stack: Canceled: Canceled
+	at new Fx (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:435:152416)
+	at i._remoteCall (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:435:158468)
+	at r.<computed>.s.charCodeAt.r.<computed> (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:435:155263)
+	at jg._doExecuteCommand (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:535:48252)
+	at jg.executeCommand (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:535:47699)
+	at Object.executeCommand (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:673:138438)
+	at closeEntirePythagoraExtension (c:\Users\koris\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.6.19\out\extension.js:542:31)
+	at Object.deactivate (c:\Users\koris\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.6.19\out\extension.js:409:15)
+	at g_._deactivate (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:14930)
+	at file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:12457
+	at Array.map (<anonymous>)
+	at g_._deactivateAll (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:12445)
+	at g_.terminate (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:12796)
+	at i.terminate (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:541:1072)
+	at da (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:852:11797)
+	at Pp.value (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:852:9939)
+	at T._deliver (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:431:3244)
+	at T.fire (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:431:3562)
+	at fs.fire (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:433:8509)
+	at MessagePortMain.<anonymous> (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:852:8171)
+	at MessagePortMain.emit (node:events:509:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+Extra context: {
+  "message": "Canceled"
+}
+2026-08-01T14:42:20.700Z INFO Is remote: false
+2026-08-01T14:42:20.702Z INFO Starting Local. Installation path: undefined
+2026-08-01T14:42:20.703Z INFO [MainProvider] Creating new MainProvider instance...
+2026-08-01T14:42:20.704Z INFO [TabsManager] Code view listener set up at initialization
+2026-08-01T14:42:20.706Z INFO Installation path exists: c:\Users\koris\OneDrive\Desktop\salon_project\data
+2026-08-01T14:42:20.707Z INFO Initializing database with URL: file:C:\Users\koris\AppData\Local\Temp\pythagora-temp\pythagora.db
+2026-08-01T14:42:20.712Z INFO Database file exists, skipping prisma generate/push for faster startup
+2026-08-01T14:42:20.713Z INFO Database initialized successfully
+2026-08-01T14:42:20.714Z INFO [Migration] Checking for database migration...
+2026-08-01T14:42:21.018Z INFO [Migration] No migration needed
+2026-08-01T14:42:25.798Z INFO Closing entire Pythagora extension...
+2026-08-01T14:42:25.801Z ERROR Error closing extension
+Error: Canceled
+Stack: Canceled: Canceled
+	at new Fx (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:435:152416)
+	at i._remoteCall (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:435:158468)
+	at r.<computed>.s.charCodeAt.r.<computed> (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:435:155263)
+	at jg._doExecuteCommand (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:535:48252)
+	at jg.executeCommand (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:535:47699)
+	at Object.executeCommand (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:673:138438)
+	at closeEntirePythagoraExtension (c:\Users\koris\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.6.19\out\extension.js:542:31)
+	at Object.deactivate (c:\Users\koris\.vscode\extensions\pythagoratechnologies.pythagora-vs-code-2.6.19\out\extension.js:409:15)
+	at g_._deactivate (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:14930)
+	at file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:12457
+	at Array.map (<anonymous>)
+	at g_._deactivateAll (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:12445)
+	at g_.terminate (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:539:12796)
+	at i.terminate (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:541:1072)
+	at da (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:852:11797)
+	at Pp.value (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:852:9939)
+	at T._deliver (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:431:3244)
+	at T.fire (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:431:3562)
+	at fs.fire (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:433:8509)
+	at MessagePortMain.<anonymous> (file:///c:/Users/koris/AppData/Local/Programs/Microsoft%20VS%20Code/e4c7e7b1d6/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:852:8171)
+	at MessagePortMain.emit (node:events:509:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+Extra context: {
+  "message": "Canceled"
+}

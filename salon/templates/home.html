@@ -1,0 +1,281 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+AURA Unisex Salon & Academy
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+<div class="hero">
+
+<img src="{% static 'images/logo.png' %}"
+     alt="AURA Logo"
+     style="
+     width:520px;
+     max-width:90%;
+     margin-bottom:40px;
+     filter:drop-shadow(0px 10px 25px rgba(0,0,0,0.6));
+     ">
+
+<p style="
+font-size:24px;
+letter-spacing:3px;
+line-height:1.8;
+margin-bottom:45px;
+color:#f5f5f5;
+">
+Luxury Hair • Beauty • Makeup • Professional Training
+</p>
+
+<a href="/appointment/" class="book-btn">
+    Book Appointment →
+</a>
+
+</div>
+
+
+
+<div class="features-section">
+
+
+<h1 style="color:#d4af37;">
+Why Choose AURA?
+</h1>
+
+
+
+<div class="features-container">
+
+
+
+<div class="feature-card">
+
+<h2 style="color:#d4af37;">
+Expert Stylists
+</h2>
+
+<p>
+Professional artists creating your perfect look.
+</p>
+
+</div>
+
+
+
+
+<div class="feature-card">
+
+<h2 style="color:#d4af37;">
+Premium Services
+</h2>
+
+<p>
+Luxury hair, beauty and skincare treatments.
+</p>
+
+</div>
+
+
+
+
+<div class="feature-card">
+
+<h2 style="color:#d4af37;">
+AURA Academy
+</h2>
+
+<p>
+Learn professional beauty skills from experts.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+<section style="margin-top:100px; text-align:center;">
+
+    <h1 style="
+    color:#d4af37;
+    font-size:48px;
+    margin-bottom:15px;
+    ">
+        Our Premium Services
+    </h1>
+
+    <p style="
+    color:#ccc;
+    font-size:20px;
+    margin-bottom:50px;
+    ">
+        Experience luxury beauty treatments by our professional experts.
+    </p>
+
+    <div class="services-container">
+
+        {% for service in services|slice:":3" %}
+
+        <div class="service-card">
+
+            <img src="{{ service.image.url }}"
+                 class="service-image">
+
+            <h2>{{ service.title }}</h2>
+
+            <p>{{ service.description|truncatewords:12 }}</p>
+
+            <h3>₹ {{ service.price }}</h3>
+
+        </div>
+
+        {% empty %}
+
+        <p>No services available.</p>
+
+        {% endfor %}
+
+    </div>
+
+    <br><br>
+
+    
+
+</section>
+
+<section class="features-section">
+
+    <h1>Meet Our Experts</h1>
+
+    <div class="services-container">
+
+        {% for member in team_members %}
+
+        <div class="service-card">
+
+            <img src="{{ member.image.url }}"
+                 alt="{{ member.name }}"
+                 class="service-image">
+
+            <h2>{{ member.name }}</h2>
+
+            <h3>{{ member.designation }}</h3>
+
+            <p>{{ member.description|truncatewords:15 }}</p>
+
+        </div>
+
+        {% empty %}
+
+        <p>No team members available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<section class="features-section">
+
+    <h1>What Our Clients Say</h1>
+
+    <div class="services-container">
+
+        {% for testimonial in testimonials %}
+
+        <div class="service-card">
+
+            <img src="{{ testimonial.image.url }}"
+                 alt="{{ testimonial.name }}"
+                 class="service-image">
+
+            <h2>{{ testimonial.name }}</h2>
+
+            <h3>{{ testimonial.profession }}</h3>
+
+            <p style="color:#d4af37; font-size:22px;">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <p>
+                "{{ testimonial.review }}"
+            </p>
+
+        </div>
+
+        {% empty %}
+
+        <p>No testimonials available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1>5000+</h1>
+        <p>Happy Clients</p>
+    </div>
+
+    <div class="stat-box">
+        <h1>15+</h1>
+        <p>Expert Stylists</p>
+    </div>
+
+    <div class="stat-box">
+        <h1>10+</h1>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat-box">
+        <h1>20+</h1>
+        <p>Beauty Services</p>
+    </div>
+
+</section>
+
+<section class="gallery-preview">
+
+    <h1>Our Gallery</h1>
+
+    <p>
+        Discover our latest transformations and beautiful salon moments.
+    </p>
+
+    <div class="gallery-grid">
+
+        {% for image in gallery_images %}
+
+        <div class="gallery-item">
+
+            <img src="{{ image.image.url }}"
+                 alt="{{ image.title }}">
+
+        </div>
+
+        {% empty %}
+
+        <p>No gallery images available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+{% endblock %}

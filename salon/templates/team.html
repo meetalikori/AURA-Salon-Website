@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Our Team - AURA Unisex Salon & Academy
+{% endblock %}
+
+{% block content %}
+
+<h1 class="services-title">
+    Meet Our Experts
+</h1>
+
+<div class="services-container">
+
+    {% for member in team_members %}
+
+    <div class="service-card">
+
+        <img src="{{ member.image.url }}"
+             alt="{{ member.name }}"
+             class="service-image">
+
+        <h2>{{ member.name }}</h2>
+
+        <h3>{{ member.designation }}</h3>
+
+        <p><strong>Experience:</strong> {{ member.experience }}</p>
+
+        <p>{{ member.description }}</p>
+
+    </div>
+
+    {% empty %}
+
+    <h2>No team members available.</h2>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

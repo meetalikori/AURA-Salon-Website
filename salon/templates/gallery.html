@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Gallery - AURA Unisex Salon & Academy
+{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align:center; color:#d4af37; margin-bottom:40px;">
+    AURA Salon Gallery
+</h1>
+
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+
+{% for image in images %}
+
+<div style="background:#222; width:280px; border-radius:15px; overflow:hidden;">
+
+    <img src="{{ image.image.url }}"
+         alt="{{ image.title }}"
+         style="width:100%; height:220px; object-fit:cover;">
+
+    <div style="padding:20px; text-align:center;">
+
+        <h2 style="color:#d4af37;">
+            {{ image.title }}
+        </h2>
+
+        <p>
+            {{ image.category }}
+        </p>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<h2 style="color:white;">
+    No gallery images uploaded yet.
+</h2>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

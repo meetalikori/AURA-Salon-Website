@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>{% block title %}AURA Unisex Salon & Academy{% endblock %}</title>
+
+    
+        
+
+    
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <div class="nav-logo">
+            <img src="{% static 'images/logo.png' %}" alt="AURA Logo">
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/academy/">Academy</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/team/">Experts</a></li>
+            <li><a href="/appointment/">Book</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer>
+
+    <h3>AURA Unisex Salon & Academy</h3>
+
+    <p>Luxury Hair • Beauty • Makeup • Professional Training</p>
+
+    <br>
+
+    <p>
+        © 2026 <span>AURA Unisex Salon & Academy</span>. All Rights Reserved.
+    </p>
+
+</footer>
+
+<a href="https://wa.me/917719047745?text=Hello%20AURA!%20I%20would%20like%20to%20book%20an%20appointment."
+   class="whatsapp-button"
+   target="_blank">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>

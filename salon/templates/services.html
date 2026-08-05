@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Services - AURA Unisex Salon & Academy
+{% endblock %}
+
+{% block content %}
+
+<h1 class="services-title">
+    Our Services
+</h1>
+
+<div class="services-container">
+
+    {% for service in services %}
+
+    <div class="service-card">
+
+        <img src="{{ service.image.url }}"
+     alt="{{ service.title }}"
+     class="service-image">
+
+        <h2>{{ service.title }}</h2>
+
+        <p>{{ service.description }}</p>
+
+        <h3>{{ service.price }}</h3>
+
+        <a href="/appointment/" class="book-btn">
+           Book Now
+        </a>
+
+
+    </div>
+
+    {% empty %}
+
+    <h2>No services available.</h2>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
