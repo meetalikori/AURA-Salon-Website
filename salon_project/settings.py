@@ -136,3 +136,6 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+LOGIN_REDIRECT_URL = '/owner/dashboard/'
+LOGOUT_REDIRECT_URL = '/owner/login/'

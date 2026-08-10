@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Owner Dashboard | AURA Salon</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard {
+            padding: 40px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .dashboard-header h1 {
+            color: #d4af37;
+            margin: 0;
+        }
+
+        .logout-btn {
+            background: #d4af37;
+            color: #111;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout-btn:hover {
+            background: #f8df77;
+        }
+
+        .appointment-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1b1b1b;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .appointment-table th {
+            background: #d4af37;
+            color: #111;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .appointment-table td {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .appointment-table tr:hover {
+            background: #222;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .pending {
+            color: #f0ad4e;
+        }
+
+        .confirmed {
+            color: #4caf50;
+        }
+
+        .completed {
+            color: #2196f3;
+        }
+
+        .cancelled {
+            color: #f44336;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 7px 12px;
+            margin: 3px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .confirm-btn {
+            background: #4caf50;
+            color: white;
+        }
+
+        .complete-btn {
+            background: #2196f3;
+            color: white;
+        }
+
+        .cancel-btn {
+            background: #f44336;
+            color: white;
+        }
+
+        .no-appointments {
+            text-align: center;
+            color: #aaa;
+            padding: 50px;
+            background: #1b1b1b;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 900px) {
+
+            .dashboard {
+                padding: 20px;
+            }
+
+            .appointment-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+            <h1>AURA Owner Dashboard</h1>
+            <p>Appointment Management</p>
+        </div>
+
+        <a href="{% url 'owner_logout' %}" class="logout-btn">
+            Logout
+        </a>
+
+    </div>
+
+
+    {% if appointments %}
+
+    <table class="appointment-table">
+
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for appointment in appointments %}
+
+            <tr>
+
+                <td>{{ appointment.name }}</td>
+
+                <td>{{ appointment.phone }}</td>
+
+                <td>{{ appointment.email }}</td>
+
+                <td>{{ appointment.service }}</td>
+
+                <td>{{ appointment.date }}</td>
+
+                <td>{{ appointment.time }}</td>
+
+                <td>{{ appointment.message|default:"-" }}</td>
+
+                <td>
+
+                    {% if appointment.status == "Pending" %}
+                        <span class="status pending">
+                            Pending
+                        </span>
+
+                    {% elif appointment.status == "Confirmed" %}
+                        <span class="status confirmed">
+                            Confirmed
+                        </span>
+
+                    {% elif appointment.status == "Completed" %}
+                        <span class="status completed">
+                            Completed
+                        </span>
+
+                    {% elif appointment.status == "Cancelled" %}
+                        <span class="status cancelled">
+                            Cancelled
+                        </span>
+                    {% endif %}
+
+                </td>
+
+                <td>
+
+                    {% if appointment.status == "Pending" %}
+
+                        <a
+                            href="{% url 'update_appointment_status' appointment.id 'Confirmed' %}"
+                            class="action-btn confirm-btn">
+                            Confirm
+                        </a>
+
+                        <a
+                            href="{% url 'update_appointment_status' appointment.id 'Cancelled' %}"
+                            class="action-btn cancel-btn">
+                            Cancel
+                        </a>
+
+                    {% elif appointment.status == "Confirmed" %}
+
+                        <a
+                            href="{% url 'update_appointment_status' appointment.id 'Completed' %}"
+                            class="action-btn complete-btn">
+                            Completed
+                        </a>
+
+                        <a
+                            href="{% url 'update_appointment_status' appointment.id 'Cancelled' %}"
+                            class="action-btn cancel-btn">
+                            Cancel
+                        </a>
+
+                    {% endif %}
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+        <div class="no-appointments">
+            <h2>No appointments yet</h2>
+            <p>New customer appointments will appear here.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
